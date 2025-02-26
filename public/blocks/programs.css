@@ -1,0 +1,487 @@
+.about-header,
+#about-area,
+.mission-area,
+.content-area {
+  background-color: #3e3d3d;
+  color: white;
+}
+
+.program-area {
+  color: white;
+}
+
+.program-content {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  min-width: 100%;
+  font-size: 20px;
+}
+
+.mission-area #about p {
+  text-align: left;
+  margin: 0;
+  padding: 20px 0 0;
+}
+
+.program-content h4 {
+  line-height: 3;
+}
+
+.program-content strong {
+  font-weight: 300;
+}
+
+.about-content h4,
+.about-content p {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+section .mission-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0 !important;
+  padding-top: 7rem;
+}
+
+.mission-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 10rem;
+}
+
+.mission-content li {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.mission-content img {
+  height: 90%;
+  width: 60%;
+  object-fit: cover;
+  border-radius: 410px;
+}
+
+.mission-img_2 {
+  display: flex;
+  flex-direction: row;
+}
+
+#menu-icon.bx-x {
+  font-family: "Boxicons";
+  content: "\eb99"; /* Unicode for X */
+  font-size: 3rem;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+#menu-icon.bx-x {
+  transform: rotate(90deg); /* Adds animation when switching */
+}
+
+.program-title {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  #mission #about {
+    width: 140%;
+    font-size: 27px;
+  }
+
+  .home-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-img_1 {
+    flex-direction: column;
+  }
+
+  .home-img_1 img {
+    max-width: 80%;
+  }
+
+  .logo-area p {
+    font-size: 1.5rem;
+  }
+
+  /* Responsive Feature Section */
+  #feature {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  #feature .fe-box {
+    width: 90%;
+    max-width: 320px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  #feature .fe-box:hover {
+    box-shadow: 0px 0px 20px rgba(70, 62, 221, 0.1);
+  }
+
+  #feature .fe-box h2 {
+    color: #16b3ce;
+  }
+
+  #feature .fe-box p {
+    font-size: 14px;
+    color: #35707a;
+  }
+
+  /* Home Section */
+  .home-section {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  .home-section ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .home-img_1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .home-img_1 img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .mission-content img {
+    height: 60%;
+    width: 60%;
+    object-fit: cover;
+    border-radius: 410px;
+  }
+
+  .mission-content li {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  /* Responsive About Content */
+  .about-content {
+    max-width: 90%;
+    text-align: center;
+  }
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .about-header ul.navbar {
+    display: none;
+  }
+
+  .about-header ul.navbar.active {
+    display: block;
+    position: fixed; /* Keeps the menu in place */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Covers full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1000;
+  }
+
+  header ul#nav a {
+    color: #16b3ce;
+    margin: 0;
+    padding: 0;
+  }
+
+  .about-header {
+    width: 100vw;
+    max-width: 100%;
+    padding: 2rem 3rem;
+  }
+
+  .navbar {
+    display: none; /* JavaScript will override this */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: var(--bg-color);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  .mission-content img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 410px;
+    align-self: center;
+  }
+
+  .mission-content li {
+    display: flex;
+    gap: 5rem;
+    flex-direction: column;
+  }
+
+  .navbar.active {
+    position: fixed; /* Keeps the menu in place */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Covers full screen height */
+    background-color: #efefee; /* Match background color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure it sits above everything else */
+  }
+
+  .navbar.active a {
+    font-size: 2rem;
+    margin: 1rem 0; /* Spacing between links */
+  }
+
+  body.menu-open {
+    overflow: hidden !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    position: fixed !important;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+
+  header ul#nav {
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
+  }
+
+  #navbar li {
+    padding: 10px 0;
+  }
+
+  /* Logo Section */
+  .logo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  #logo {
+    max-width: 300px;
+  }
+
+  .logo-area p {
+    max-width: 80%;
+    color: #16b3ce;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header ul#nav a {
+    font-size: 1.7rem;
+  }
+
+  .logo-area p {
+    font-size: 1.2rem;
+  }
+
+  .mission-area #about p {
+    font-size: 24px;
+  }
+
+  #feature {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #feature .fe-box {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* Logo Section */
+  .logo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  #logo {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .logo-area p {
+    max-width: 80%;
+    color: #16b3ce;
+    font-size: 1.8rem;
+  }
+
+  /* Responsive Feature Section */
+  #feature {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  #feature .fe-box {
+    width: 90%;
+    max-width: 320px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  #feature .fe-box:hover {
+    box-shadow: 0px 0px 20px rgba(70, 62, 221, 0.1);
+  }
+
+  #feature .fe-box h2 {
+    color: #16b3ce;
+  }
+
+  #feature .fe-box p {
+    font-size: 14px;
+    color: #35707a;
+  }
+
+  /* Home Section */
+  .home-section {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  .home-section ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .home-img_1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .home-img_1 img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Responsive About Content */
+  .about-content {
+    max-width: 90%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .mission-area #about p {
+    font-size: 20px;
+    padding: 10px 0 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .program h1 p {
+    display: flex;
+    align-items: flex-start !important;
+    text-align: flex-start !important;
+  }
+
+  #mission #about {
+    width: 130%;
+  }
+
+  .mission-area #about p {
+    text-align: flex-start;
+    font-size: 14px;
+    padding: 10px 0 0;
+    margin: 0;
+    line-height: 2;
+  }
+
+  #mission {
+    padding: 5rem 0;
+    width: 100%;
+  }
+
+  .mission-content img {
+    height: 12rem;
+    width: 18rem;
+    object-fit: cover;
+    border-radius: 100px;
+  }
+
+  .mission-content li {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .program-content {
+    font-size: 14px;
+  }
+
+  .programming {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    padding: 0 10px;
+  }
+}
