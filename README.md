@@ -92,4 +92,5 @@ The website is built using:
 - HTML5
 - CSS3 with modern features
 - Vanilla JavaScript for interactivity
+- Node.js and Next.js for backend functionality
 - Responsive design principles
