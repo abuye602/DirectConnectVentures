@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let logoText = document.querySelector(".logo-area p");
   let aboutText = document.querySelector(".mission-area #about p");
   let missionText = document.querySelectorAll(".about-area #about p");
-  let form = document.getElementById("form-contact");
   let menuTitle = document.querySelector(".menu-title");
   let logoimg = document.querySelector(".logo");
   let homeTitle = document.querySelector("#home-title");
@@ -48,14 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   };
-
-  // Form handler
-  if (form) {
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      console.log("Form submitted!");
-    });
-  }
 
   // Scroll animation setup
   const observer = new IntersectionObserver(
@@ -136,43 +127,36 @@ document
       body: JSON.stringify(formData),
     })
       .then((response) => {
-        if (response.ok) {
-          return response.text();
-        } else {
-          throw new Error("Failed to send email");
+        if (!response.ok) {
+          return response.json().then((err) => Promise.reject(err));
         }
+        return response.json();
       })
       .then((data) => {
-        // Display success message without redirecting
         const feedbackMessage = document.getElementById("feedback-message");
         feedbackMessage.textContent = "Email was sent!";
         feedbackMessage.style.color = "#16b3ce";
         feedbackMessage.style.fontWeight = "500";
         feedbackMessage.style.fontSize = "1.2rem";
         feedbackMessage.style.display = "block";
-        console.log("Success:", data);
 
-        // Change button text back to "Submit" and re-enable it
         submitButton.textContent = "Submit";
         submitButton.disabled = false;
 
-        // Scroll to top of the page
         setTimeout(() => {
           window.scrollTo({ top: 0, behavior: "instant" });
-        }, 1000);
-
-        // Wait for 2 seconds to show success message, then reload the page
-        setTimeout(() => {
-          window.location.reload(); // This will reload the page
-        }, 1000); // 2 seconds delay before reloading the page
+          window.location.reload();
+        }, 2000);
       })
       .catch((error) => {
-        console.log("Error:", error);
-
-        // Display error message
+        console.error("Error:", error);
         const feedbackMessage = document.getElementById("feedback-message");
-        feedbackMessage.textContent = "Failed to send email. Please try again";
+        feedbackMessage.textContent =
+          error.message || "Failed to send email. Please try again";
         feedbackMessage.style.color = "red";
         feedbackMessage.style.display = "block";
+
+        submitButton.textContent = "Submit";
+        submitButton.disabled = false;
       });
   });
