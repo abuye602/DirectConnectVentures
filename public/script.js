@@ -126,11 +126,14 @@ document
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => {
-        if (!response.ok) {
-          return response.json().then((err) => Promise.reject(err));
+      .then(async (response) => {
+        const data = await response.text();
+        try {
+          return JSON.parse(data);
+        } catch (e) {
+          console.error("Response parsing error:", data);
+          throw new Error("Invalid server response");
         }
-        return response.json();
       })
       .then((data) => {
         const feedbackMessage = document.getElementById("feedback-message");
@@ -151,8 +154,7 @@ document
       .catch((error) => {
         console.error("Error:", error);
         const feedbackMessage = document.getElementById("feedback-message");
-        feedbackMessage.textContent =
-          error.message || "Failed to send email. Please try again";
+        feedbackMessage.textContent = "Failed to send email. Please try again";
         feedbackMessage.style.color = "red";
         feedbackMessage.style.display = "block";
 
