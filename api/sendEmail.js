@@ -1,5 +1,4 @@
-const nodemailer = require("nodemailer");
-require("dotenv").config();
+import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Credentials", true);
