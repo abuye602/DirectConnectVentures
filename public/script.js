@@ -128,7 +128,7 @@ document
     submitButton.disabled = true; // Disable the button to prevent multiple submissions
 
     // Use Fetch to send form data to server
-    fetch("/send-email", {
+    fetch("/api/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
